@@ -1,4 +1,4 @@
-
+#cc  -fPIC -shared  file.c -o file.so
 import sys
 import random, string
 from ctypes import *
@@ -182,3 +182,4 @@ supp_tests = [
 for i in range(len(supp_tests)):
     print(f"\nSupplementary Test {i}:")
     test_prtf(supp_tests[i])
+
