@@ -1,6 +1,6 @@
 #cc  -fPIC -shared  file.c -o file.so
 import sys
-import random, string
+import random, string     
 from ctypes import *
 import os, io
 import tempfile
