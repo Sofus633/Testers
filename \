@@ -51,11 +51,9 @@ libc = CDLL(None)
 f = io.StringIO()
 
 def test_gnl():
-    gentext = gen_text_lines(0, 1000, 10)
-    print("hey")
-    print(gentext)
-    with open("nf", "w") as f:
-        f.write(gentext)
+    with open("nf", "a") as f:
+        f.write(gen_text_lines(0, 1000, 10))
+    
 
     fd1 = os.open("nf", os.O_RDONLY)
     fd2 = os.open("nf", os.O_RDONLY)
@@ -87,9 +85,8 @@ def handle_sigint(signum, frame):
     sys.exit(0)
 
 signal.signal(signal.SIGINT, handle_sigint)
-
-
-errors = []
+ 
+rrors = []
 for i in range(TEST_NUMBER):
 
     print(f"\ntest number {i} ;")
